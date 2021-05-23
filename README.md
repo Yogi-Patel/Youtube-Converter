@@ -36,5 +36,5 @@ This works for all sites supported by youtube-dl
 python ytconv.py --ffmpeg <extension of format you want> <file w/ extension which you want to convert> 
 ```
 
-The `<extension of format you want>` should not contain **.** 
+The `<extension of format you want>` should not contain "**.**" 
 For example, if you want to convert to `.mp4`, then pass it as `mp4` only. 
