@@ -3,10 +3,10 @@ import os
  
 
 def ToMp3(URL):
-	command = "youtube-dl -o \"D:\\Music\\test\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
+	command = "youtube-dl -o \"%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
 	os.system(command)
 
-def ToMp4(URL):
+def Video(URL):
 	command = "youtube-dl -o \"%(title)s.%(ext)s\" -f best " + URL
 	os.system(command)
 
@@ -27,7 +27,7 @@ parser = argparse.ArgumentParser(description = msg)
 parser.add_argument("-mp3", "--tomp3", type = str, help = "Get mp3 of file on given URL. Passed argument can be a playlist \
 	(make sure it is public or unlisted. Not sure if private will work) or a single URL")
 
-parser.add_argument("-mp4", "--tomp4", type = str, help = "Download video(s) as mp4. Passed argument can be a playlist or a single URL")
+parser.add_argument("-video", type = str, help = "Download video(s). Passed argument can be a playlist or a single URL")
 parser.add_argument("--ffmpeg", nargs=2, metavar=('ext','file'), help = "Convert a format to another")
 
  
@@ -36,7 +36,7 @@ args = parser.parse_args()
  
 if args.tomp3:
     ToMp3(args.tomp3)
-elif args.tomp4:
-	ToMp4(args.tomp4)
+elif args.video:
+	Video(args.video)
 elif args.ffmpeg:
 	ffmpeg_convert(args.ffmpeg)
