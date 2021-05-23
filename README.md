@@ -16,14 +16,14 @@ The command that this runs is geared more towards music as it embeds the thumbna
 ```
 python ytconv.py -mp3 <youtube_url>
 ```
-*The youtube_url can be a playlist or a single video*
+*The youtube_url can be a playlist or a single video*.
 *The mp3 will be downloaded with a bitrate of 256. You can change it by modifying the code. Changing 256 in line 6 to a bitrate of your liking* 
  
 I am assuming this works for other sites supported by youtube-dl as well but I have not tried it on my own 
 
 
 
-#### One can download videos as well: 
+#### Download videos as well: 
 ```
 python ytconv.py -mp4 <URL>
 ```
