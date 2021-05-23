@@ -10,7 +10,7 @@ You need to have youtube-dl installed and you should download ffmpeg and add it 
 
 # Usage 
 
-###### You can use it as a youtube to mp3 converter by running: 
+#### You can use it as a youtube to mp3 converter by running: 
 The command that this runs is geared more towards music as it embeds the thumbnail, saves the title and artists.
 
 ```
@@ -23,7 +23,7 @@ I am assuming this works for other sites supported by youtube-dl as well but I h
 
 
 
-###### One can download videos as well: 
+#### One can download videos as well: 
 ```
 python ytconv.py -mp4 <URL>
 ```
@@ -31,7 +31,7 @@ python ytconv.py -mp4 <URL>
 This works for all sites supported by youtube-dl 
 
 
-###### Convert one format to another: 
+#### Convert one format to another: 
 ```
 python ytconv.py --ffmpeg <extension of format you want> <file w/ extension which you want to convert> 
 ```
