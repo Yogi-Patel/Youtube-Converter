@@ -38,3 +38,12 @@ python ytconv.py --ffmpeg <extension of format you want> <file w/ extension whic
 
 The `<extension of format you want>` should not contain "**.**" 
 For example, if you want to convert to `.mp4`, then pass it as `mp4` only. 
+
+#### Run it without arguments
+```
+python ytconv.py
+```
+
+This gives you a menu-based option. It is fairly intuitive
+
+ 
