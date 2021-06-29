@@ -67,3 +67,5 @@ elif args.ffmpeg:
 	ffmpeg_convert(args.ffmpeg)
 else: 
 	default()
+
+input("#"*10 + "DONE" + "#"*10)
