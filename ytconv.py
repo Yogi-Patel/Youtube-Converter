@@ -68,4 +68,4 @@ elif args.ffmpeg:
 else: 
 	default()
 
-input("#"*10 + "DONE" + "#"*10)
+input("\n\n\n" + "#"*10 + "DONE" + "#"*10)
