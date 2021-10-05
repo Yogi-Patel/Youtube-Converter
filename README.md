@@ -5,7 +5,7 @@ This program uses youtube-dl and ffmpeg to download videos and convert them to f
 
 # Requirements 
 
-You need to have youtube-dl installed and you should download ffmpeg and add it to your PATH variable (if you are using Windows)
+You need to have youtube-dl installed and you should download ffmpeg and add it to your System PATH variable (if you are using Windows)
 
 
 # Usage 
