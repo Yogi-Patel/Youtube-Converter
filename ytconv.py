@@ -32,11 +32,11 @@ def default():
 
 
 def ToMp3(URL):
-	command = "youtube-dl -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
+	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
 	os.system(command)
 
 def Video(URL):
-	command = "youtube-dl -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -f bestvideo+bestaudio " + URL
+	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -f bestvideo+bestaudio " + URL
 	os.system(command)
 
 def ffmpeg_convert(data_tuple):
@@ -73,4 +73,3 @@ elif args.ffmpeg:
 else: 
 	while(True):
 		default()
-
