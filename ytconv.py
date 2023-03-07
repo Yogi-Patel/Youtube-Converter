@@ -27,16 +27,12 @@ def default():
 		data_tuple = (ext, filename)
 		ffmpeg_convert(data_tuple)
 
-	input("\n\n\n" + "#"*10 + "DONE" + "#"*10)
-	os.system("cls")
-
-
 def ToMp3(URL):
-	command = "youtube-dl -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
+	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
 	os.system(command)
 
 def Video(URL):
-	command = "youtube-dl -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -f bestvideo+bestaudio " + URL
+	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -f bestvideo+bestaudio " + URL
 	os.system(command)
 
 def ffmpeg_convert(data_tuple):
@@ -45,7 +41,6 @@ def ffmpeg_convert(data_tuple):
 	command = "ffmpeg -i " + file +" " + file.split(".")[0] + "."+ ext  
 	print(command)
 	os.system(command)
-	
 
 # Initialize parser
 msg = "A somewhat command-line program (that uses youtube-dl and ffmpeg) to download videos."\
@@ -71,6 +66,6 @@ elif args.video:
 elif args.ffmpeg:
 	ffmpeg_convert(args.ffmpeg)
 else: 
-	while(True):
-		default()
+	default()
 
+input("\n\n\n" + "#"*10 + "DONE" + "#"*10)
