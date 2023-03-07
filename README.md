@@ -7,6 +7,9 @@ This program uses youtube-dl and ffmpeg to download videos and convert them to f
 
 You need to have youtube-dl installed and you should download ffmpeg and add it to your System PATH variable (if you are using Windows)
 
+You can get them at: 
+https://www.gyan.dev/ffmpeg/builds/
+https://github.com/yt-dlp/yt-dlp (Download recommended .exe for windows and keep it in the same place as FFMPEG which is optional. I did it so that I can have it all in the same PATH in the environment variable)
 
 # Usage 
 
