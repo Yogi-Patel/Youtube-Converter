@@ -1,6 +1,6 @@
 import argparse
 import os 
- 
+
 def default():
 	print("Enter a number as per your choice")
 	print("1. Download MP3 of video at given URL")
@@ -17,35 +17,37 @@ def default():
 
 	if (choice == 1):
 		URL = input("Enter the URL \n")
+		
 		ToMp3(URL)
 	elif (choice ==2):
 		URL = input("Enter the URL \n")
+		
 		Video(URL)
 	else: 
 		ext = input("Enter the extension of format you want to convert it to (Without a '.') \n")
 		filename = input("Enter the filename (w/ extension) which you want to convert \n")
 		data_tuple = (ext, filename)
+		
 		ffmpeg_convert(data_tuple)
-
-	input("\n\n\n" + "#"*10 + "DONE" + "#"*10)
-	os.system("cls")
 
 
 def ToMp3(URL):
+	print('')
 	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
 	os.system(command)
 
 def Video(URL):
+	print('')
 	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -f bestvideo+bestaudio " + URL
 	os.system(command)
 
 def ffmpeg_convert(data_tuple):
+	print('')
 	ext = data_tuple[0]
 	file = data_tuple[1]
 	command = "ffmpeg -i " + file +" " + file.split(".")[0] + "."+ ext  
-	print(command)
-	os.system(command)
 	
+	os.system(command)
 
 # Initialize parser
 msg = "A somewhat command-line program (that uses youtube-dl and ffmpeg) to download videos."\
@@ -70,6 +72,9 @@ elif args.video:
 	Video(args.video)
 elif args.ffmpeg:
 	ffmpeg_convert(args.ffmpeg)
-else: 
-	while(True):
-		default()
+else:
+    while True:
+        os.system("cls")
+        default()
+        input("\n\n\n" + "#"*10 + "DONE" + "#"*10)
+
