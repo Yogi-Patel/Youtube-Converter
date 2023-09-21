@@ -1,12 +1,16 @@
 # Program Description 
 
-This program uses youtube-dl and ffmpeg to download videos and convert them to formats of your choosing 
+This program uses yt-dlp and ffmpeg to download videos and convert them to formats of your choosing 
 
 
 # Requirements 
 
-You need to have youtube-dl installed and you should download ffmpeg and add it to your System PATH variable (if you are using Windows)
+You need to have yt-dlp installed and you should download ffmpeg and add it to your System PATH variable (if you are using Windows)
 
+You can get them at:   
+https://www.gyan.dev/ffmpeg/builds/   
+https://github.com/yt-dlp/yt-dlp   
+(Download recommended .exe for windows and keep it in the same place as FFMPEG which is optional. I did it so that I can have it all in the same PATH in the environment variable)
 
 # Usage 
 
@@ -19,7 +23,7 @@ python ytconv.py -mp3 <youtube_url>
 *The youtube_url can be a playlist or a single video*.
 *The mp3 will be downloaded with a bitrate of 256. You can change it by modifying the code. Changing 256 in line 6 to a bitrate of your liking* 
  
-I am assuming this works for other sites supported by youtube-dl as well but I have not tried it on my own 
+I am assuming this works for other sites supported by yt-dlp as well but I have not tried it on my own 
 
 
 
@@ -28,7 +32,7 @@ I am assuming this works for other sites supported by youtube-dl as well but I h
 python ytconv.py -mp4 <URL>
 ```
 
-This works for all sites supported by youtube-dl 
+This works for all sites supported by yt-dlp 
 
 
 #### Convert one format to another: 
