@@ -6,11 +6,12 @@ def default():
 	print("1. Download MP3 of video at given URL")
 	print("2. Download video from given URL") 
 	print("3. Convert from one media format to another ")
+	print("4. Download an entire youtube channel as mp3 using channel url")
 
 	while(True):
 		choice = int(input())
 		
-		if (choice > 0 and choice < 4): 
+		if (choice > 0 and choice < 5): 
 			break
 		else: 
 			print("Enter a valid option")
@@ -19,26 +20,39 @@ def default():
 		URL = input("Enter the URL \n")
 		
 		ToMp3(URL)
-	elif (choice ==2):
+	elif (choice == 2):
 		URL = input("Enter the URL \n")
 		
 		Video(URL)
-	else: 
+	elif (choice == 3): 
 		ext = input("Enter the extension of format you want to convert it to (Without a '.') \n")
 		filename = input("Enter the filename (w/ extension) which you want to convert \n")
 		data_tuple = (ext, filename)
 		
 		ffmpeg_convert(data_tuple)
+	elif (choice == 4):
+		URL = input("Enter the channel URL \n")
+		
+		entire_channel_ToMp3(URL)
 
+def print_command(command):
+	#this will print the command that will be run
+	print("\n THE FOLLOWING COMMAND WILL BE RUN \n")
+	print(command)
+	
 
 def ToMp3(URL):
 	print('')
 	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata " + URL
+	
+	print_command(command)
 	os.system(command)
 
 def Video(URL):
 	print('')
 	command = "yt-dlp -o \"C:\\Users\\yogir\\Downloads\\%(title)s.%(ext)s\" -f bestvideo+bestaudio " + URL
+	
+	print_command(command)
 	os.system(command)
 
 def ffmpeg_convert(data_tuple):
@@ -47,6 +61,15 @@ def ffmpeg_convert(data_tuple):
 	file = data_tuple[1]
 	command = "ffmpeg -i " + file +" " + file.split(".")[0] + "."+ ext  
 	
+	print_command(command)
+	os.system(command)
+	
+def entire_channel_ToMp3(URL):
+	print('')
+	
+	command = "yt-dlp -o \"D:\\Music\\Entire Channels\\%(playlist)s\\%(title)s.%(ext)s\" -x --audio-format mp3 --audio-quality 256K --embed-thumbnail --add-metadata --yes-playlist " + URL
+	
+	print_command(command)
 	os.system(command)
 
 # Initialize parser
